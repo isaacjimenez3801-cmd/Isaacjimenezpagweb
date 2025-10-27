@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --primary-glow: #00ffff; /* Cyan */
+    --secondary-glow: #ff00ff; /* Magenta */
+    --tertiary-glow: #ffff00; /* Yellow */
+    --text-color: #e0e0e0;
+    --border-color: rgba(0, 255, 255, 0.2);
+    --card-bg: #1a1a1a;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+/* --- Navbar --- */
+#main-nav {
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand .logo-main {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+.navbar-brand:hover .logo-main {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-color) !important;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-glow) !important;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.navbar-toggler {
+    border-color: var(--border-color);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 255, 255, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 10, 10, 0.7), var(--bg-color)), url('https://www.transparenttextures.com/patterns/diagmonds.png');
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-glow);
+    object-fit: cover;
+    box-shadow: 0 0 25px var(--primary-glow);
+    filter: grayscale(30%) contrast(110%);
+}
+
+#hero h1.glitch {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: #fff;
+    position: relative;
+    text-shadow: 0 0 10px var(--secondary-glow);
+}
+
+#hero .subtitle {
+    color: var(--primary-glow);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+#hero .bio {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* --- General Section Styling --- */
+section {
+    background-color: transparent;
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--primary-glow);
+    text-shadow: 0 0 10px var(--primary-glow);
+    margin-bottom: 3rem;
+}
+
+.futuristic-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Service Cards --- */
+.service-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-glow);
+    transition: left 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--border-color);
+}
+
+.service-card:hover::before {
+    left: 0;
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--primary-glow);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: var(--primary-glow);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.testimonial-author {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--secondary-glow);
+    text-align: right;
+    margin-top: auto;
+}
+
+/* --- Contact Form --- */
+.form-control {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+}
+
+.form-control:focus {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.btn-submit {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--secondary-glow);
+    color: var(--secondary-glow);
+    padding: 1rem;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--secondary-glow);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--secondary-glow);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #111;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--tertiary-glow);
+    text-shadow: 0 0 10px var(--tertiary-glow);
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-glow);
+    color: var(--bg-color);
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.back-to-top i {
+    font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #hero h1.glitch {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link { font-size: 0.8rem; }
+    nav ul { gap: 1rem; }
+    #hero h1.glitch { font-size: 2.5rem; }
+    #hero .subtitle { font-size: 1rem; }
+}
